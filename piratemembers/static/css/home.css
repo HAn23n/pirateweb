@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("./color.css");
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../img/w2.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.3s;
+}
+
+.wrapper{
+    width: 500px;
+    height: 520px;
+    background: rgba(112, 51, 37);
+    border: 5px solid #b1a786 ;
+    backdrop-filter: blur(20px);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 0.5px 20px;
+}
+
+
+#ptc{
+    text-align: center;
+}
+#s1{
+    height: 120px;
+   
+
+}
+#heal,#stamina,#skill{
+    height:40%;
+    font-size: 2.1rem;
+    align-items: center; 
+    font-weight: 500;
+}
+#heal-img,#stamina-img,#skill-img{
+    height:40%;
+    font-size: 2.1rem;
+    align-items: center; 
+    font-weight: 500;
+}
+
+
+#cl{
+   text-align: center;
+   box-sizing: border-box;
+   width: 33.33%;
+   height: 200px;
+   
+}
+
+.box-title{
+    border-radius: 20px;
+    background-color: #b1a786;
+    height: 100px;
+    padding-top: 10px;
+    
+}
+.box-rank {
+    border-radius: 20px;
+    background-color: #321812;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#d_rank {
+    padding-left: 50px;
+    text-align: center;
+
+}
+
+#rank {
+    font-size: 1.5rem;
+}
+
+#random {
+    text-align: center;
+}
+
+#random-btn {
+    width: 250px;
+    padding: auto;
+    color: var(--white);
+    background-color: #321812;
+    font-size: 1.5rem;
+    border-radius: 20px;
+}
+#next-btn {
+    width: 250px;
+    padding: auto;
+    color: var(--white);
+    background-color: #321812;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+
+#random-btn:hover {
+    color: var(--border);
+}
+
+
+/* ///////////// */
+
+
+#random-btn:hover {
+    color: var(--border);
+}
+
+.next-box {
+    height: auto;
+    background: rgba(112, 51, 37);
+    border: 5px solid #b1a786;
+    backdrop-filter: blur(20px);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 0.5px 20px;
+    position: relative;
+}
+
+#card {
+    text-align: center;
+}
+
+
+.overlay-container1 img {
+    width: 100%;
+    height: auto;
+}
+
+.overlay-container1 span {
+    position: absolute;
+    top: 80px;
+    left: 120px;
+    color: #321812;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.overlay-container2 span {
+    position: absolute;
+    top: 100px;
+    left: 120px;
+    color: #321812;
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.overlay-container3 span {
+    position: absolute;
+    top: 165px;
+    left: 120px;
+    color: #321812;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.overlay-container4 span {
+    position: absolute;
+    top: 230px;
+    left: 250px;
+    color: #321812;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.overlay-container5 span {
+    position: absolute;
+    top: 468px;
+    left: 208px;
+    color: var(--white);
+    font-size: 1.55rem;
+    font-weight: 600;
+}
+
+.overlay-container6 span {
+    position: absolute;
+    top: 468px;
+    left: 359px;
+    color: var(--white);
+    font-size: 1.55rem;
+    font-weight: 600;
+}
+
+.overlay-container7 span {
+    position: absolute;
+    top: 468px;
+    left: 507px;
+    color: var(--white);
+    font-size: 1.55rem;
+    font-weight: 600;
+}
+
+.overlay-container8 span {
+    position: absolute;
+    top: 415px;
+    left: 605px;
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+
+#box-cp {
+    display: flex;          
+    flex-direction: column;  
+    align-items: center;        
+    justify-content: center;   
+    gap: 10px;     
+    width: 100%;             
+        
+}
+
+#btn {
+    width: 100%;
+    color: var(--white);
+    background-color: #321812;
+    font-size: 1.2rem;
+    border-radius: 20px; 
+    padding: 10px;         
+   
+}
+
+/* Media Queries for screens with max-width 932px */
+@media only screen and (max-width: 932px) {
+
+    #card_img {
+        width: 400px;
+    }
+
+    .overlay-container2 span {
+        top: 37px;
+        left: 52px;
+        font-size: 1.5rem;
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+    }
+
+    .overlay-container3 span {
+        top: 70px;
+        left: 52px;
+        font-size: 0.5rem;
+        font-family: "Poppins", cursive;
+        font-weight: 800;
+    }
+
+    .overlay-container4 span {
+        top: 95px;
+        left: 97px;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .overlay-container5 span {
+        position: absolute;
+        top: 179px;
+        left: 78px;
+        color: var(--white);
+        font-size: 0.5rem;
+        font-weight: 600;
+    }
+
+    .overlay-container6 span {
+        position: absolute;
+        top: 178px;
+        left: 132px;
+        color: var(--white);
+        font-size: 0.5rem;
+        font-weight: 600;
+    }
+
+    .overlay-container7 span {
+        position: absolute;
+        top: 178px;
+        left: 185px;
+        color: var(--white);
+        font-size: 0.5rem;
+        font-weight: 600;
+    }
+
+    .overlay-container8 span {
+        
+        top: 158px;
+        left: 220px;
+        font-size: 1.2rem;
+    }
+
+    #btn {
+        font-size: 0.5rem;
+        padding: 8px;
+    }
+}
+
+/* Media Queries for screens with max-width 844px */
+@media only screen and (max-width: 844px) {
+    
+    .next-box {
+        width: 400px;
+        padding: 10px;
+    }
+
+    .wrapper{
+        width: 400px;
+        height: 500px;
+        background: rgba(112, 51, 37);
+        border: 5px solid #b1a786 ;
+        backdrop-filter: blur(20px);
+        color: var(--white);
+        border-radius: 20px;
+        padding: 0.5px 20px;
+    }
+
+    #heal,#stamina,#skill{
+        height:40%;
+        font-size: 1.5rem;
+        align-items: center; 
+        font-weight: 500;
+    }
+    .box-title{
+        border-radius: 20px;
+        background-color: #b1a786;
+        height: 90px;
+        padding-top: 10px;
+        
+    }
+    .overlay-container2 span {
+        top: 37px;
+        left: 52px;
+        font-size: 1.5rem;
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+    }
+
+    .overlay-container3 span {
+        top: 70px;
+        left: 52px;
+        font-size: 0.7rem;
+        font-family: "Poppins", cursive;
+        font-weight: 800;
+    }
+
+    .overlay-container4 span {
+        top: 105px;
+        left: 110px;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .overlay-container5 span {
+        position: absolute;
+        top: 198px;
+        left: 86px;
+        color: var(--white);
+        font-size: 0.5rem;
+        font-weight: 600;
+    }
+
+    .overlay-container6 span {
+        position: absolute;
+        top: 198px;
+        left: 146px;
+        color: var(--white);
+        font-size: 0.5rem;
+        font-weight: 600;
+    }
+
+    .overlay-container7 span {
+        position: absolute;
+        top: 198px;
+        left: 204px;
+        color: var(--white);
+        font-size: 0.5rem;
+        font-weight: 600;
+    }
+
+    .overlay-container8 span {
+        top: 175px;
+        left: 244px;
+        font-size: 1.2rem;
+    }
+
+    #btn {
+        font-size: 0.5rem;
+        padding: 8px;
+    }
+}

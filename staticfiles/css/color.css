@@ -1,0 +1,35 @@
+:root {
+    --body-color: #e4e9f7;
+    --sidebar-color: #fff;
+    --primary-color: #695cfe;
+    --primary-color-light: #f6f5ff;
+    --toggle-color: #ddd;
+    --text-color: #707070;
+
+    --background-color :#291f96;
+    --background-color-a :#5447ed;
+    --background-color-b :#1f167d;
+    --background-color-c :#271ca1;
+    --background-color-d :#b81bb0;
+    --background-color-e :#761ac2;
+
+    --primary: #0d6efd;
+    --primary-a: #92bbf8;
+
+    --status-red : rgb(231, 86, 86);
+    --status-green : rgb(88, 201, 88);
+    
+    --white:#fff;
+    --black:#000;
+    --gray:#333;
+    
+    --border: rgba(255, 255, 255,0.2);
+    
+    --box-shadow: rgba(0, 0, 0, 0.1);
+    --shadow:rgba(0,0,0,.3);
+      
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}

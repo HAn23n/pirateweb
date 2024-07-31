@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <section class="section" id="box_f">
+        <div class="wrapper" id="wrapper">
+            <div class="row" id="ptc">
+                <div class="col">
+                   <img id="s1" src="https://img5.pic.in.th/file/secure-sv1/pt1.png" alt="">
+            </div>
+
+            </div>
+            
+            <div class="row" id="r1">
+                <div class="col" id="cl">
+                    <img src="https://img2.pic.in.th/pic/hd3ffaa2548640855.png" id="heal-img">
+                    <div class="mt-3"></div>
+                    <div class="box-title">
+                        <span id="heal">{{ user.heal|default:"-" }}</span>
+                        <p>Heal</p>
+                    </div>
+                </div>
+
+                <div class="col" id="cl">
+                    <img src="https://img2.pic.in.th/pic/stamina237eca8ac289768a.png" id="stamina-img">
+                    <div class="mt-3"></div>
+                    <div class="box-title">
+                        <span id="stamina">{{ user.stamina|default:"-" }}</span>
+                        <p>Stamina</p>
+                    </div>
+                </div>
+
+                <div class="col" id="cl">
+                    <img src="https://img5.pic.in.th/file/secure-sv1/skill3870fb43825a0532.png" id="skill-img">
+                    <div class="mt-3"></div>
+                    <div class="box-title">
+                        <span id="skill">{{ user.skill|default:"-" }}</span>
+                        <p>Skill</p>
+                    </div>
+                </div>
+                
+            </div>
+            <br>
+            <div class="row" id="d_rank">
+                <div class="col-4">
+                    <p style="font-size: 1.8rem;">Role</p>
+                </div>
+                <div class="col-6">
+                    <div class="box-rank">
+                        <span id="rank">{{ user.rank|default:"-" }}</span>
+                        <span id="total" style="display: none;">{{ user.stamina|default:"0" | add:user.heal|add:user.skill }}</span>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row" id="random"> 
+                <div class="col">
+                {% if not user.random_used %}
+                    <button class="btn" id="random-btn">Random</button>
+                {% else %}
+                <button class="btn" id="random-btn" onclick="showNextBox()">Next</button>
+                {% endif %}
+                </div>
+            </div>
+        
+    </section>
+    <script>
+       $(document).ready(function() {
+        $('#random-btn').click(function() {
+            $.ajax({
+                url: "{% url 'random' %}",
+                type: "GET",
+                success: function(data) {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        $('#stamina').text(data.stamina);
+                        $('#heal').text(data.heal);
+                        $('#skill').text(data.skill);
+                        $('#rank').text(data.rank);
+                        $('#total').text(data.total);
+                        $('#random-btn').hide();
+                        $('#random').append('<div class="text-center mt-3"><button class="btn" id="next-btn" onclick="showNextBox()">Next</button></div>');
+                    }
+                }
+            });
+        });
+    });
+
+    function showNextBox() {
+        var wrapper = document.getElementById('wrapper');
+        var nextBox = document.getElementById('next-box');
+        var randomBtn = document.getElementById('random-btn');
+
+        wrapper.style.display = 'none';
+        nextBox.style.display = 'block';
+
+        $('#rank_c').text($('#rank').text());
+        $('#stamina_c').text($('#stamina').text());
+        $('#heal_c').text($('#heal').text());
+        $('#skill_c').text($('#skill').text());
+        $('#total_c').text($('#total').text());
+
+
+        randomBtn.textContent = 'Next';
+    }
+
+    
+    </script>
+
+
+<div class="next-box" id="next-box" style="display: none;">
+    <div class="row" id="card">
+        <div class="col" id="card_img" >
+            <img src="https://img5.pic.in.th/file/secure-sv1/card2f29a9c29df02b7e.png" alt="Card Image" id="card_img" >
+                <div class="overlay-container2">
+                    <span id="name_c">{{ user.name }}</span>
+                    
+                    <div class="overlay-container3">
+                        <span id="academy_c">{{ user.academy }}</span>
+                        
+                        <div class="overlay-container4">
+                            
+                            <div class="col" id="r">
+                                <span id="rank_c">{{ user.rank|default:"-" }}</span>
+                                
+                                <div class="overlay-container5">
+                                    <span id="stamina_c">{{ user.stamina|default:"-" }}</span>
+                                    
+                                    <div class="overlay-container6">
+                                        <span id="heal_c">{{ user.heal|default:"-" }}</span>
+                                        
+                                        <div class="overlay-container7">
+                                            <span id="skill_c">{{ user.skill|default:"-" }}</span>
+                                           
+                                            <div class="overlay-container8">
+                                                <span id="total_c">{{ user.stamina|default:"0" | add:user.heal|add:user.skill }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <a href="https://www.pkru.ac.th/"><button class="btn" id="btn" >Website PKRU</button></a>
+            </div>
+        </div>
+         <br>
+    </div>
+  
+</div>
+</body>
+</html>
+
+<!--     
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Sign Out</button>
+    </form> -->
+
+
+
+
+
+
